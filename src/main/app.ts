@@ -1,10 +1,10 @@
 import express from 'express'
-// import cors from 'cors'
 
-// import { checkAuth } from "./middleware/authentication"
+import router from "./router.js"
 
 const app = express()
 app.use(express.json())
+app.use(router)
 // app.use(cors())
 
 export default app

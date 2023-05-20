@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction} from "express";
 
-import { handler } from "../interfaces/Presenters.ts";
+import { handler } from "../interfaces/Presenters.js";
 
 export const expressControllerAdapter = (controllerFn: handler) => {
   return async (req: Request, res: Response, next: NextFunction) => {

@@ -1,7 +1,7 @@
 import { HumanChatMessage, SystemChatMessage } from "langchain/schema";
 
-import { ChatHistoryChatData } from "./ChatHistory.data.ts";
-import { ChatMessageModel } from "./ChatHistory.model.ts";
+import { ChatHistoryChatData } from "./ChatHistory.data.js";
+import { ChatMessageModel } from "./ChatHistory.model.js";
 
 export class ChatHistoryService {
   private dbChatHistory: ChatHistoryChatData;

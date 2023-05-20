@@ -1,4 +1,4 @@
-import { ChatMessageModel } from "./ChatHistory.model.ts";
+import { ChatMessageModel } from "./ChatHistory.model.js";
 
 export interface ChatMessageDocumentDto {
   id: string;

@@ -1,5 +1,5 @@
-import { Request, Response } from "../../../interfaces/Presenters.ts";
-import { ChatHistoryService } from "../core/ChatHistory.service.ts";
+import { Request, Response } from "../../../interfaces/Presenters.js";
+import { ChatHistoryService } from "../core/ChatHistory.service.js";
 
 export class ChatHistoryController {
   chatHistoryService: ChatHistoryService;
@@ -12,15 +12,22 @@ export class ChatHistoryController {
     const { queryParameters, pathParameters, body } = request;
     const { userId } = pathParameters;
     const { message } = body;
-  
+
     const response: Response = {
       statusCode: 200,
       body: {
-        message: JSON.stringify(
-          await this.chatHistoryService.listAllChatHistory(),
-        ),
+        message: "",
       },
     };
+
+    // const response: Response = {
+    //   statusCode: 200,
+    //   body: {
+    //     message: JSON.stringify(
+    //       await this.chatHistoryService.listAllChatHistory(),
+    //     ),
+    //   },
+    // };
 
     return response;
   }

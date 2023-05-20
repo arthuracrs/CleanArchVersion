@@ -1,10 +1,14 @@
 import express from "express";
 // import cors from 'cors'
 
-import { expressControllerAdapter } from "./expressControllerAdapter.ts";
+import { expressControllerAdapter } from "./expressControllerAdapter.js";
+
+import {UserMiddleware} from "./middleware/user.middleware.js"
+
+import { chatHistoryController } from "../modules/chatHistory/index.js";
 
 const router = express.Router();
 
-router.get("/chat/history", expressControllerAdapter(ChatHistoryController));
+router.post("/webhook" , UserMiddleware.handle, expressControllerAdapter(chatHistoryController.handleListAllChatHistory));
 
 export default router;

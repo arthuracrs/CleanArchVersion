@@ -1,5 +1,9 @@
-import { App } from "./app";
+import app from "./main/app.js";
+
+const port = 3000;
 
 console.clear();
 
-(new App()).run();
+app.listen(port, () => {
+  console.log("Running on " + port + " port");
+});
